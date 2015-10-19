@@ -13,6 +13,3 @@ Note that this is the name the automated tester will expect as well.
 
 There are sample rotor configuration files in rotors/
 and plugboard configuration files in plugboards/
-
-
-This project is a coursework assignment - Imperial College London department of Computing.
