@@ -12,8 +12,7 @@
 
 class Machine {
 private:
-  //std::vector<int> offsets;
-  int offsets[2];
+  std::vector<int> offsets;
   std::vector<Rotor>& rotors;
   Plugboard& pg;
   Reflector re;

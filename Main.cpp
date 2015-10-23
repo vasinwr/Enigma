@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     cout << enig.map(input) << endl;
     enig.rotate();
   }*/
-  
+
 
   char c;
   while (cin >> ws >> c) {

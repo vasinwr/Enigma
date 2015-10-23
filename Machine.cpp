@@ -4,12 +4,13 @@
 #include <vector>
 #include "Machine.h"
 
+#include <iostream>
 
 Machine::Machine(std::vector<Rotor>& rotors_x, Plugboard& pg_x):
         rotors(rotors_x), pg(pg_x){
-  //setting offset
-  offsets[0] = 0;
-  offsets[1] = 0;
+  for(int i = 0; i < rotors_x.size(); i++){
+    offsets.push_back(0);
+  }
 }
 
 
@@ -19,13 +20,14 @@ int Machine::map(int input){
   out = map_forward(out);
   out = re.map(out);
   out = map_backward(out);
-  out = pg.map(out);
+  out = pg.map_back(out);
   rotate();
   return out;
 }
 
 int Machine::map_forward(int input){
   int out = input;
+
   for(int i = 0; i < rotors.size(); i++){
     out = rotors[i].map(out,offsets[i]);
   }
@@ -46,7 +48,7 @@ void Machine::rotate(){
 
 void Machine::rotate_aux(int x){
   //if(x < offsets.size()){
-  if(x < 2){
+  if(x < rotors.size()){
     offsets[x] = offsets[x] + 1;
     if(offsets[x] == 26){
       offsets[x] = 0;

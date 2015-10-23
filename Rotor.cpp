@@ -21,13 +21,18 @@ Rotor::Rotor(char* filename){
 }
 
 int Rotor::map(int input,int offset){
-  return wire[(input + offset)%26];
+  int out = wire[(input+offset)%26];
+  out = (out + 26 - offset) %26;
+//  cout << "forward : input" <<input << "output" << out << endl;
+  return out;
 }
 
 int Rotor::map_back(int input, int offset){
+  input = (input + offset)%26;
   int count = 0;
   while(count < 26){
-    if(wire[(count + offset)%26] == input){
+    if(wire[(count+offset)%26] == input){
+//      cout << "backward : input" <<input << "output" << count << endl;
       return count;
     }
     count++;

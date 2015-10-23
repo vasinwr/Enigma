@@ -31,7 +31,11 @@ Plugboard::Plugboard(char* filename) {
     }
     myfile.close();
   }
-  else cout << "Unable to open file";
+  else cout << "Unable to open file" <<endl;
+
+//  for(int i = 0; i < 26; i ++){
+//    cout << board[i] << endl;
+//  }
 
 }
 
@@ -49,7 +53,7 @@ int Plugboard::map_back(int input){
 }
 
 void Plugboard::swap(int a, int b){
-  cout << "swap!" << a << " " << b << endl;
+  //cout << "swap!" << a << " " << b << endl;
   int temp = board[a];
   board[a] = board[b];
   board[b] = temp;
