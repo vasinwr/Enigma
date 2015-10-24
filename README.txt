@@ -1,15 +1,7 @@
-CS2 Enigma
-==========
+How to run:
+> ./enigma rotors/<filename.rot> rotors/<filename2.rot> rotors/<filename3.rot> plugboards/<name.pb>
+The program supports any numbers of rotors. 
 
-Sample Configuration Files and A Small Testsuite
-================================================
+Example:
+> ./enigma rotors/II.rot rotors/IV.rot plugboards/I.pb
 
-To run the testsuite, in this directory run:
-
-./tests.py
-
-This will only work if your compiled file is called 'enigma'.
-Note that this is the name the automated tester will expect as well.
-
-There are sample rotor configuration files in rotors/
-and plugboard configuration files in plugboards/
